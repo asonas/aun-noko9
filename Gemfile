@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.4'
+gem 'rails', '4.1.6'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'jbuilder'
