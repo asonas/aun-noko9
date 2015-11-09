@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 gem 'rails'
 gem 'coffee-rails'
 gem 'jbuilder'
-gem 'jquery-rails'
-gem 'rails-assets-bootstrap'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'turbolinks'
@@ -14,6 +11,11 @@ gem 'pg'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
+end
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-jquery'
+  gem 'rails-assets-jquery-ujs'
 end
 
 group :development do
