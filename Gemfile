@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails'
+gem "browserify-rails"
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'sass-rails', '~> 4.0.3'
@@ -37,4 +38,3 @@ group :test do
   gem "poltergeist"
   gem 'rspec-rails', group: :development
 end
-

@@ -45,6 +45,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    browserify-rails (1.1.0)
+      railties (>= 4.0.0, < 5.0)
     builder (3.2.2)
     byebug (8.1.0)
     capybara (2.5.0)
@@ -247,6 +249,7 @@ DEPENDENCIES
   awesome_print
   better_errors
   binding_of_caller
+  browserify-rails
   coffee-rails
   database_rewinder
   fabrication
