@@ -24,6 +24,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry', group: :test
   gem 'pry-byebug'
+  gem 'quiet_assets'
+  gem 'puma'
   gem 'spring'
 end
 
