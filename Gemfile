@@ -4,6 +4,7 @@ gem 'rails'
 gem "browserify-rails"
 gem 'coffee-rails'
 gem 'jbuilder'
+gem 'gon'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'turbolinks'
