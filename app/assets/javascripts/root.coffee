@@ -13,12 +13,23 @@ class Subscriber
 
     @client.connect options
 
-  setMessageArrivedCallback: (callback) =>
+  setMessageArrivedCallback: (callback) ->
     @client.onMessageArrived = callback
 
+class Messenger
+  constructor: (params) ->
+    @messages = ko.observableArray(gon.messages)
+    @snsSubscriver = new Subscriber("social-stream/tweet")
+    @subscribe()
+
+  subscribe: ->
+
+    @snsSubscriver.setMessageArrivedCallback (message) =>
+      message = message.payloadString
+      @messages.unshift(JSON.parse(message))
+
+    @snsSubscriver.connect()
+
 $ ->
-  snsSubscriver = new Subscriber("social-stream/tweet")
-  snsSubscriver.setMessageArrivedCallback( (message) ->
-    console.log message.payloadString
-  )
-  snsSubscriver.connect()
+  messenger = new Messenger()
+  ko.applyBindings messenger

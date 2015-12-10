@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery-ujs
 //= require bootstrap
+//= require knockoutjs
+//= require underscore
 //= require_tree .

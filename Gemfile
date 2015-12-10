@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem "browserify-rails"
 gem 'coffee-rails'
 gem 'jbuilder'
 gem 'gon'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'turbolinks'
+gem 'twitter'
 gem 'slim-rails'
 gem 'pg'
 
@@ -18,6 +18,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
   gem 'rails-assets-jquery'
   gem 'rails-assets-jquery-ujs'
+  gem 'rails-assets-knockoutjs'
+  gem 'rails-assets-underscore'
 end
 
 group :development do

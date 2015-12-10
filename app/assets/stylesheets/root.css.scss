@@ -1,3 +1,44 @@
-// Place all the styles related to the root controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.announcement {
+  min-height: 80px;
+  border-bottom: 1px solid #ddd;
+}
+
+html > body {
+  font-size: 42px;
+}
+
+ul.messages {
+  padding: 0;
+
+  li.tweet {
+    padding: 10px 0px;
+    background: linear-gradient(#f8f8f8, #e5e5e5);
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+
+    .header {
+      margin-right: 10px;
+      display: inline-block;
+      padding-right: 12px;
+      color: #fff;
+      background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#222222));
+      border-radius: 4px;
+      font-weight: bold;
+
+      img {
+        height: 60px;
+        width: 60px;
+      }
+
+      .user {
+      }
+    }
+    .body {
+      line-height: 42px;
+      padding: 8px;
+      text-shadow: 0 1px 0 #ffffff;
+      font-weight: bold;
+      word-wrap: break-word;
+    }
+  }
+}
