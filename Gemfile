@@ -22,6 +22,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
 group :development do
   gem 'awesome_print'
   gem 'better_errors'
