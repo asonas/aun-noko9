@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-xs-6
+      ul.devices
+        h3 Devices
+        li.device
+          .alert.alert-success 101 is connected
+
+    .col-xs-6
+      h3 new announcements
+      = form_for Announcement.new, remote: true, html: { class: "js-announcement-form"} do |f|
+        .form-group
+          = f.text_field :message, placeholder: "message", class: "form-control"
+        .form-group
+          = f.submit nil, class: "btn btn-primary"
+
+      ul.messages
+        - @announcements.each do |announcement|
+          li.message
+            = announcement.message
+            .pull-right
+              = link_to "delete", announcement, method: :delete, remote: true, class: "btn btn-danger"
+= include_gon
