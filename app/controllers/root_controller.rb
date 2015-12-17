@@ -11,6 +11,7 @@ class RootController < ApplicationController
       config.access_token_secret = auth[3]
     end
     gon.messages = client.search("kosenconf", result_type: "recent").take(10).map{ |t| convert(t)  }
+    gon.announcements = Announcement.all.map(&:message)
   end
 
   private

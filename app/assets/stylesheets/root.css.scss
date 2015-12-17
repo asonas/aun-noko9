@@ -8,6 +8,7 @@
 
 html > body {
   font-size: 42px;
+  overflow: hidden;
 }
 
 ul.messages {
@@ -34,7 +35,7 @@ ul.messages {
       }
 
       .user {
-        .name {
+        .screen-name {
           margin-left: 10px;
         }
       }

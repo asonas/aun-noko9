@@ -1,14 +1,13 @@
-.announcement
-  |hello world
+.announcement(data-bind="fadeInText: message")
 
 ul.messages(data-bind="foreach: messages")
   li.tweet
     .header
       span.user
         img.media-object.pull-left.icon(data-bind="attr: {src: user.profile_image_url}" width="48" height="48")
-        span.name(data-bind="text: user.name")
-        span.screen_name(data-bind="text: '@' + user.screen_name")
+        span.screen-name(data-bind="text: '@' + user.screen_name")
         .fa.fa-twitter.twitter-icon
     .body(data-bind="text: _.unescape(text) ")
 
 = include_gon
+= javascript_include_tag "root"

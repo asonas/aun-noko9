@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'root#index'
 
   get "/admin", to: "admin#index"
+  post "restart", to: "admin#restart"
   resources :announcements, only: %i(create destroy)
 
   # The priority is based upon order of creation: first created -> highest priority.

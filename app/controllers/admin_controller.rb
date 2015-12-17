@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
 
   def index
-    @announcements = Announcement.all
+    gon.announcements = Announcement.all
+    gon.username = ENV["MQTT_USERNAME"]
+    gon.password = ENV["MQTT_PASSWORD"]
   end
 end

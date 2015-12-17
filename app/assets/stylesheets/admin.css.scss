@@ -1,5 +1,12 @@
 body.admin.index  {
   font-size: 16px;
+
+  .devices {
+    .device {
+      list-style: none;
+    }
+  }
+
   .messages {
     .message {
       height: 43px;

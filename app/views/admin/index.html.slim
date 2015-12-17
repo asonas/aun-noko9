@@ -2,22 +2,26 @@
   .row
     .col-xs-6
       ul.devices
-        h3 Devices
+        h3
+          | Devices
+          small
+            = link_to "Restart", restart_path, class: "btn btn-sm btn-warning", "data-bind" => "click: restart"
         li.device
           .alert.alert-success 101 is connected
 
+
     .col-xs-6
       h3 new announcements
-      = form_for Announcement.new, remote: true, html: { class: "js-announcement-form"} do |f|
+      = form_for Announcement.new, remote: true, html: { class: "js-announcement-create-form"} do |f|
         .form-group
-          = f.text_field :message, placeholder: "message", class: "form-control"
+          = f.text_field :message, placeholder: "message", class: "form-control js-announcement-message"
         .form-group
           = f.submit nil, class: "btn btn-primary"
 
-      ul.messages
-        - @announcements.each do |announcement|
-          li.message
-            = announcement.message
-            .pull-right
-              = link_to "delete", announcement, method: :delete, remote: true, class: "btn btn-danger"
+      ul.messages(data-bind="foreach: announcements")
+        li.message(data-bind="text: message")
+        a.js-announcement-delete-form.btn.btn-danger(data-bind="click: $root.removeAnnouncement")
+          | Delete
+
 = include_gon
+= javascript_include_tag "admin"

@@ -3,18 +3,22 @@ class AnnouncementsController < ApplicationController
   def create
     a = Announcement.create(announcement_param)
     render json: {
-      message: a.message
+      announcement: a
     }
 
   end
 
   def destroy
     a = Announcement.find params[:id]
+    message = a.message
     a.destroy
 
     render json: {
       message: "success",
-      type: :success
+      type: :success,
+      announcement: {
+        message: message
+      }
     }
   end
 
