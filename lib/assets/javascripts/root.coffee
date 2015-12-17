@@ -37,7 +37,7 @@ class Messenger
       @message(message)
       @announcements.push(message)
 
-    , 1000
+    , 15000
 
   replaceMessage = =>
   ko.bindingHandlers.fadeInText = update: (element, valueAccessor) ->
