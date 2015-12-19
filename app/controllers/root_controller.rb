@@ -12,6 +12,7 @@ class RootController < ApplicationController
     end
     gon.messages = client.search("kosenconf", result_type: "recent").take(10).map{ |t| convert(t)  }
     gon.announcements = Announcement.all.map(&:message)
+    gon.excluede_screen_names = ENV["TWITTER_EXCLUDE_SCREEN_NAME"].split(",")
   end
 
   private

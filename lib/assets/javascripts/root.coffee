@@ -38,7 +38,6 @@ class Messenger
       @announcements.push(message)
     , 10000
 
-  replaceMessage = =>
   ko.bindingHandlers.fadeInText = update: (element, valueAccessor) ->
     $(element).hide()
     ko.bindingHandlers.html.update element, valueAccessor
@@ -47,8 +46,9 @@ class Messenger
   subscribe: ->
     @snsSubscriver.setMessageArrivedCallback (message) =>
       message = JSON.parse(message.payloadString)
-      unless message.text.match /^RT/
-        @messages.unshift(message)
+      return if message.text.match /^RT/
+      return if _.contains gon.excluede_screen_names, message.screen_name
+      @messages.unshift(message)
 
     @subscriber.setMessageArrivedCallback (message) =>
       message = message.payloadString
