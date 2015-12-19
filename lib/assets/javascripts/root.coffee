@@ -46,9 +46,9 @@ class Messenger
 
   subscribe: ->
     @snsSubscriver.setMessageArrivedCallback (message) =>
-      console.log "Recieve message: #{message}"
-      message = message.payloadString
-      @messages.unshift(JSON.parse(message))
+      message = JSON.parse(message.payloadString)
+      unless message.text.match /^RT/
+        @messages.unshift(message)
 
     @subscriber.setMessageArrivedCallback (message) =>
       message = message.payloadString
