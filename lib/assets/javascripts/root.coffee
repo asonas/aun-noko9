@@ -47,7 +47,7 @@ class Messenger
     @snsSubscriver.setMessageArrivedCallback (message) =>
       message = JSON.parse(message.payloadString)
       return if message.text.match /^RT/
-      return if _.contains gon.excluede_screen_names, message.screen_name
+      return if _.contains gon.excluede_screen_names, message.user.screen_name
       @messages.unshift(message)
 
     @subscriber.setMessageArrivedCallback (message) =>
